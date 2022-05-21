@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Leona Emmanuel</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href="{% static 'polls/styles.css' %}">
+</head>
+
+<body>
+    <div>
+        <section class="home">
+            <h1><a href="/index" id="name">Leona Emmanuel</a></h1>
+        </section>
+        <section class="home" id="home" style="font-weight: bold;">
+            <span><a href="/index">Home</a></span>
+            <span><a href="/about">About</a></span>
+            <span><a href="/mtips">Tips</a></span>
+            <span><a href="/hobbies">Hobbies</a></span>
+            <span><a href="/contact">Contact</a></span>
+        </section>
+    </div>
+    <div class="mom" style="background-color: rgb(147, 83, 83); margin: 20px -50px; padding: 40px;">
+        <h2>Momma's Tips</h2>
+        <section>
+            <h3>Tip 1</h3>
+            <p>Breastmilk is the best medicine for the baby.</p>
+            <h3>Tip 2</h3>
+            <p>Always burp the baby after food.</p>
+            <h3>Tip 3</h3>
+            <p>Make sure to change baby's diaper when it is full.</p>
+            <h3>Tip 4</h3>
+            <p>Give oil massage to the baby everyday before bath.</p>
+        </section>
+    </div>
+</body>
+
+</html>

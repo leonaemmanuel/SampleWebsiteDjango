@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Leona Emmanuel</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href="{% static 'polls/styles.css' %}">
+</head>
+
+<body>
+    <div>
+        <section class="home">
+            <h1><a href="/index" id="name">Leona Emmanuel</a></h1>
+        </section>
+        <section class="home" id="home" style="font-weight: bold;">
+            <span><a href="/index">Home</a></span>
+            <span><a href="/about">About</a></span>
+            <span><a href="/mtips">Tips</a></span>
+            <span><a href="/hobbies">Hobbies</a></span>
+            <span><a href="/contact">Contact</a></span>
+        </section>
+    </div>
+    <div id="am">
+        <h2>About Me</h2>
+        <p>I am an Electronics and Communication Engineer working as a Software Developer at IO21.
+            I have immense interest in AI and see myself innovating new concepts in the future.
+            I am a new Mom with a 8 month old naughty son.
+            I am a very organized person. I love to visit new places around the world.
+        </p>
+    </div>
+    <div class="mom">
+        <h2>Momma's Tips</h2>
+        <section>
+            <h3>Tip 1</h3>
+            <p>Breastmilk is the best medicine for the baby.</p>
+            <h3>Tip 2</h3>
+            <p>Always burp the baby after food.</p>
+            <h3>Tip 3</h3>
+            <p>Make sure to change baby's diaper when it is full.</p>
+            <h3>Tip 4</h3>
+            <p>Give oil massage to the baby everyday before bath.</p>
+        </section>
+    </div>
+    <div id="hb">
+        <h2>Hobbies</h2>
+        <section class="hb">
+            <img src="{% static 'polls/images/img6.avif' %}" alt="Pencil Sketch" width="75%">
+            <p>Pencil Sketching</p>
+        </section>
+        <section class="hb">
+            <img src="{% static 'polls/images/img8.avif' %}" alt="Puzzles" width="80%">
+            <p>Puzzle Solving</p>
+        </section>
+        <section class="hb">
+            <img src="{% static 'polls/images/img10.avif' %}" alt="Languages" width="75%">
+            <p>Language Learning</p>
+        </section>
+        <section class="pop">
+            {% if latest_question_list %}
+            <ul>
+                {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}" id="pop">{{ question.question_text }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No polls are available.</p>
+            {% endif %}
+        </section>
+    </div>
+    <div id="ct">
+        <h2>Contact</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            <button>Submit</button><br><br>
+            <label for="email">Email ID:</label>
+            <input type="text" name="email">
+        </form>
+    </div>
+</body>
+
+</html>
